@@ -47,6 +47,35 @@ grade(student, subject) {
 console.log(`${student.name} receives a perfect score on ${subject}.`);
 }
 
+class Student extends Person {
+    constructor(studentAttributes) {
+        super(studentAttributes);
+        this.previousBackground = studentAttributes.previousBackground;
+        this.className = studentAttributes.className;
+        this.favSubjects = studentAttributes.favSubjects;
+    }
+    listsSubjects() {
+        this.favSubjects.forEach(element => console.log(element));
+    }
+    PRAssignment(subject) {
+        console.log(`${this.name} has begun the Sprint Challenge on ${subject}.`);
+    }
+}
+
+class ProjectManagers extends Instructor {
+    constructor(projectManagersAttributes) {
+        super(projectManagersAttributes);
+            this.gradClassName = projectManagersAttributes.gradClassName;
+            this.favInstructor = projectManagersAttributes.favInstructor;
+        }
+        standUp(slackChannel) {
+            console.log(`${this.name} announces to ${slackChannel} @Channel standy times!`);
+        }
+        debugsCode(studentObject, subject) {
+            console.log(`${this.name} debugs ${studentObject.name}'s code on ${subject}.`);
+        }
+    }
+
 /*
 ​
 // * First we need a Person class. This will be our `base-class`
