@@ -17,8 +17,20 @@ IMPORTANT - You'll need to create 2 - 3 objects for each class and test them acc
     specialty: 'Front-end',
     catchPhrase: `Don't forget the homies`
 });
-​
 */
+class Person {
+    constructor(attributes) {
+        this.name = attributes.name;
+        this.age = attributes.age;
+        this.location = attributes.location;
+    }
+
+    speak() {
+        console.log(`Hello, my name is ${this.name}, and I am from ${this.location}.`);
+    }
+}
+​
+/*
 ​
 // * First we need a Person class. This will be our `base-class`
 // * Person receives `name` `age` `location` all as props
