@@ -29,7 +29,24 @@ class Person {
         console.log(`Hello, my name is ${this.name}, and I am from ${this.location}.`);
     }
 }
-​
+
+class Instructor extends Person {
+    constructor(instructorAttributes) {
+        super(instructorAttributes);
+        this.specialty = instructorAttributes.specialty;
+        this.favLanguage = instructorAttributes.favLanguage;
+        this.catchPhrase = instructorAttributes.catchPhrase;
+    }
+}
+
+demo(string) {
+    console.log(`Today, we are learning about ${string}.`);
+}
+
+grade(student, subject) {
+console.log(`${student.name} receives a perfect score on ${subject}.`);
+}
+
 /*
 ​
 // * First we need a Person class. This will be our `base-class`
