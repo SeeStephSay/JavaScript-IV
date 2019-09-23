@@ -155,6 +155,36 @@ nate.sprintChallenge("JavaScript-Fundamentals");
 
 
                 /***** PROJECT MANAGERS OBJECTS *****/
+const mikayla = new ProjectManagers({
+    name: "Mikayla",
+    age: 26,
+    location: "Georgia",
+    gender: "female",
+    specialty: "front-end",
+    favLanguage: "ruby",
+    catchPhrase: "Standy time!!!",
+    gradClassName: "WEB20",
+    favInstructor: "Josh",
+});
+
+const justin = new ProjectManagers({
+    name: "Justin",
+    age: 24,
+    location: "New Mexico",
+    gender: "male",
+    specialty: "full-stack",
+    favLanguage: "javascript",
+    catchPhrase: "I'm really proud of you guys!",
+    gradClassName: "WEB21",
+    favInstructor: "Dustin",
+});
+
+mikayla.speak();
+mikayla.demo("Methods");
+justin.grade(nate, "javascript");
+justin.standUp("WEB24-justin");
+justin.debugsCode(nate, "javascript");
+
 
 /*
 ​
