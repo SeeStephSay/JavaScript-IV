@@ -183,7 +183,7 @@ mikayla.speak();
 mikayla.demo("Methods");
 justin.grade(nate, "javascript");
 justin.standUp("WEB24-justin");
-justin.debugsCode(nate, "javascript");
+justin.debugsCode(stephanie, "javascript");
 
 
 /*
