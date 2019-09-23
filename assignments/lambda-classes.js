@@ -18,6 +18,9 @@ IMPORTANT - You'll need to create 2 - 3 objects for each class and test them acc
     catchPhrase: `Don't forget the homies`
 });
 */
+
+                /***** CLASSES *****/
+
 class Person {
     constructor(attributes) {
         this.name = attributes.name;
@@ -37,14 +40,14 @@ class Instructor extends Person {
         this.favLanguage = instructorAttributes.favLanguage;
         this.catchPhrase = instructorAttributes.catchPhrase;
     }
-}
 
-demo(string) {
-    console.log(`Today, we are learning about ${string}.`);
-}
+    demo(string) {
+        console.log(`Today, we are learning about ${string}.`);
+    }
 
-grade(student, subject) {
-console.log(`${student.name} receives a perfect score on ${subject}.`);
+    grade(student, subject) {
+    console.log(`${student.name} receives a perfect score on ${subject}.`);
+    }
 }
 
 class Student extends Person {
@@ -58,7 +61,10 @@ class Student extends Person {
         this.favSubjects.forEach(element => console.log(element));
     }
     PRAssignment(subject) {
-        console.log(`${this.name} has begun the Sprint Challenge on ${subject}.`);
+        console.log(`${this.name} has has submitted a PR for ${subject}.`);
+    }
+    sprintChallenge(subject) {
+        console.log(`${this.name} has begun the Sprint Challenge on ${subject}`);
     }
 }
 
@@ -76,6 +82,80 @@ class ProjectManagers extends Instructor {
         }
     }
 
+
+                /***** PERSON OBJECTS *****/
+
+const harvey = new Person({
+    name: "Harvey",
+    age: 42,
+    location: "Toronto",
+    gender: "male",
+});
+
+const acacia = new Person({
+    name: "Acacia",
+    age: 49,
+    location: "Toronto",
+    gender: "male",
+});
+
+harvey.speak();
+acacia.speak();
+
+                /***** INSTRUCTOR OBJECTS *****/
+const brit = new Instructor({
+    name: "Brit",
+    age: 31,
+    location: "Lambda School",
+    gender: "female",
+    specialty: "full-stack",
+    favLanguage: "Ruby",
+    catchPhrase: "Let's take a break, and refill our coffees!"
+});
+
+const josh = new Instructor({
+    name: "Josh",
+    age: 38,
+    location: "Lambda School",
+    gender: "male",
+    specialty: "front-end",
+    favLanguage: "JavaScript",
+    catchPhrase: "We'll name this one Seymour Butts."
+});
+
+brit.demo("Constructors");
+josh.grade(acacia, "Node.js");
+
+
+                /***** STUDENT OBJECTS *****/
+const stephanie = new Student({
+    name: "Stephanie",
+    age: 33,
+    location: "Oklahoma",
+    gender: "female",
+    previousBackground: "stay-at-home-mom",
+    className: "WEB24",
+    favSubjects: ["html", "css", "ruby", "python"],
+});
+
+const nate = new Student({
+    name: "Nate",
+    age: 28,
+    location: "Massachusetts",
+    gender: "male",
+    previousBackground: "nursing",
+    className: "WEB23",
+    favSubjects: ["javascript", "html", "css", "python"],
+});
+
+stephanie.speak();
+stephanie.listsSubjects();
+nate.PRAssignment("JavaScript-IV");
+nate.sprintChallenge("JavaScript-Fundamentals");
+
+
+                /***** PROJECT MANAGERS OBJECTS *****/
+
 /*
 ​
 // * First we need a Person class. This will be our `base-class`
@@ -92,10 +172,6 @@ class ProjectManagers extends Instructor {
 // * Instructor has the following methods:
 //   * `demo` receives a `subject` string as an argument and logs out the phrase 'Today we are learning about {subject}' where subject is the param passed in.
 //   * `grade` receives a `student` object and a `subject` string as arguments and logs out '{student.name} receives a perfect score on {subject}'
-​
-​
-// * If the student's grade is above a 70% let them graduate! 
-//   * Otherwise go back to grading their assignments to increase their score.
 ​
 ​
 ​
