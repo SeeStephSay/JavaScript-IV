@@ -32,7 +32,9 @@ class Student extends Person {
 		this.favSubjects = studentAttributes.favSubjects;
 	}
 	listsSubjects() {
-		this.favSubjects.forEach((subject) => console.log(subject));
+		this.favSubjects.forEach((subject) => {
+			console.log(`One of ${this.name}'s favorite subjects is: `, subject);
+		});
 	}
 	PRAssignment(subject) {
 		return `${this.name} has submitted a PR for ${subject}.`;
@@ -126,7 +128,8 @@ const nate = new Student({
 });
 
 console.log(nate.speak());
-console.log(stephanie.listsSubjects()); // *****************NEED TO FIX THIS SINCE IT'S SHOWING AS UNDEFINED!
+stephanie.listsSubjects(); // Console.log is returned inside the function.
+nate.listsSubjects(); // Console.log is returned inside the function.
 console.log(stephanie.PRAssignment('JavaScript-III'));
 console.log(nate.sprintChallenge('Preprocessing-II'));
 
